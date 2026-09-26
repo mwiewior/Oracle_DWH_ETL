@@ -1,14 +1,10 @@
-BEGIN
-  sa_src.pkg_grants.user_grant(grant_name => 'CREATE ANY DIRECTORY', user_name => 'SA_SRC');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ ON DIRECTORY external_geo_tables', USER_NAME => 'SA_SRC');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ ON DIRECTORY external_cust_tables', USER_NAME => 'SA_SRC');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ ON DIRECTORY external_emp_tables', USER_NAME => 'SA_SRC');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ ON DIRECTORY external_ext_tables', USER_NAME => 'SA_SRC');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'UNLIMITED TABLESPACE', USER_NAME => 'BL_CL_1ST');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'UNLIMITED TABLESPACE', USER_NAME => 'BL_3NF');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'UNLIMITED TABLESPACE', USER_NAME => 'BL_CL_2ND');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'UNLIMITED TABLESPACE', USER_NAME => 'BL_DM');
-END;
-/
-
-
+GRANT CREATE ANY DIRECTORY TO sa_src;
+GRANT READ ON DIRECTORY external_geo_tables TO sa_src;
+GRANT READ ON DIRECTORY external_cust_tables TO sa_src;
+GRANT READ ON DIRECTORY external_emp_tables TO sa_src;
+GRANT READ ON DIRECTORY external_ext_tables TO sa_src;
+GRANT READ ON DIRECTORY external_prod_tables TO sa_src;
+GRANT UNLIMITED TABLESPACE TO bl_cl_1st;
+GRANT UNLIMITED TABLESPACE TO bl_3nf;
+GRANT UNLIMITED TABLESPACE TO bl_cl_2nd;
+GRANT UNLIMITED TABLESPACE TO bl_dm;

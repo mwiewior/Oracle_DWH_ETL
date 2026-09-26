@@ -1,11 +1,11 @@
--- Corrected, single-pass install script for the lupanava-dwh corpus.
--- Replaces the broken first load.sql/reload data.sql (narrative guides mixed with SQL,
--- out of dependency order, hardcoded absolute VM paths). Run as a DBA-privileged user
--- (e.g. SYSTEM); ALTER SESSION SET CURRENT_SCHEMA is used throughout instead of
--- connecting as each low-privilege schema user directly.
+-- Install script for the lupanava-dwh corpus: the tablespace, the six users, their grants and
+-- every table, sequence and package, in dependency order. Replaces the original load guides
+-- (docs/original/), which mixed narrative prose with SQL and used absolute VM paths.
 --
--- Repoint the 5 CREATE DIRECTORY paths below at wherever dwso/sa_src/sources/ actually
--- lands on the target host/container before running this.
+-- Run it from the repository root as a DBA user (e.g. SYSTEM), then reports.sql:
+--   cd <repo> && sqlplus system/<password>@<pdb> @install.sql
+-- ALTER SESSION SET CURRENT_SCHEMA is used instead of connecting as each schema user.
+-- The corpus is the data model and the ETL code only: it ships no data and loads none.
 SET DEFINE OFF
 WHENEVER SQLERROR CONTINUE
 
@@ -52,11 +52,7 @@ WHENEVER SQLERROR CONTINUE
 @dwso/system/0_inherit_privileges.sql
 
 -- Directories
-CREATE OR REPLACE DIRECTORY external_geo_tables AS '/tmp/corpus/dwso/sa_src/sources/geography';
-CREATE OR REPLACE DIRECTORY external_cust_tables AS '/tmp/corpus/dwso/sa_src/sources/customers';
-CREATE OR REPLACE DIRECTORY external_emp_tables AS '/tmp/corpus/dwso/sa_src/sources/employees';
-CREATE OR REPLACE DIRECTORY external_ext_tables AS '/tmp/corpus/dwso/sa_src/sources';
-CREATE OR REPLACE DIRECTORY external_prod_tables AS '/tmp/corpus/dwso/sa_src/sources/products';
+@dwso/sa_src/create_directory.sql
 
 -- Object: sa_src/dwso/sa_src/packages/pkg_grants.sql
 ALTER SESSION SET CURRENT_SCHEMA = sa_src;
@@ -538,12 +534,10 @@ ALTER SESSION SET CURRENT_SCHEMA = bl_3nf;
 ALTER SESSION SET CURRENT_SCHEMA = bl_3nf;
 @dwso/bl_3nf/tables/ce_receipts/ce_receipts.sql
 
--- Cross-schema grants: additional_grants (DBA grants: run as SYSTEM itself, calling sa_src.pkg_grants)
-ALTER SESSION SET CURRENT_SCHEMA = system;
+-- Cross-schema grants: additional_grants (DBA grants)
 @dwso/system/additional_grants.sql
 
--- Cross-schema grants: grants_to_bl_cl_1st (DBA grants: run as SYSTEM itself, calling sa_src.pkg_grants)
-ALTER SESSION SET CURRENT_SCHEMA = system;
+-- Cross-schema grants: grants_to_bl_cl_1st (DBA grants)
 @dwso/sa_src/grants_to_bl_cl_1st.sql
 
 -- Cross-schema grants: bl_3nf/grant_to_bl_cl_1st.sql

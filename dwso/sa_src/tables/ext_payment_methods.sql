@@ -9,7 +9,7 @@
          )
     ORGANIZATION EXTERNAL
         (TYPE oracle_loader DEFAULT DIRECTORY external_ext_tables
-                            ACCESS PARAMETERS (fields terminated BY ',')
+                            ACCESS PARAMETERS (fields terminated BY ',' OPTIONALLY ENCLOSED BY '"')
                             LOCATION ('payment_methods.csv')
     )
     REJECT LIMIT UNLIMITED;

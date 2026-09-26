@@ -9,13 +9,13 @@
         TYPE oracle_loader
         DEFAULT DIRECTORY external_geo_tables
          ACCESS PARAMETERS
-            (records delimited BY 0x'0D0A'
+            (records delimited BY newline
              nobadfile nodiscardfile nologfile fields terminated BY ';'
              missing field VALUES are NULL
                   (
                    country_id INTEGER EXTERNAL (4),
                    county_desc CHAR(200),
-                   structure_code INTEGER EXTERNAL,
+                   structure_code INTEGER EXTERNAL (4),
                    structure_desc CHAR(200) )
              )
         LOCATION ('iso_3166_geo_un_contries.tab')

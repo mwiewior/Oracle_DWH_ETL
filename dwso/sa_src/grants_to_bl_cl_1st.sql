@@ -1,18 +1,15 @@
-BEGIN
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ, WRITE ON DIRECTORY EXTERNAL_GEO_TABLES', USER_NAME => 'BL_CL_1ST');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ, WRITE ON DIRECTORY EXTERNAL_CUST_TABLES', USER_NAME => 'BL_CL_1ST');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ, WRITE ON DIRECTORY EXTERNAL_EMP_TABLES', USER_NAME => 'BL_CL_1ST');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ, WRITE ON DIRECTORY EXTERNAL_EXT_TABLES', USER_NAME => 'BL_CL_1ST');
-  sa_src.pkg_grants.USER_GRANT(GRANT_NAME => 'READ, WRITE ON DIRECTORY EXTERNAL_PROD_TABLES', USER_NAME => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_COUNTRIES', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_STRUCTURES', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_FULL_DATA', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_BRA_SIZES', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_PANTY_SIZES', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_CUSTOMERS', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_EMPLOYEES', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_STORES', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_PAYMENT_METHODS', user_name => 'BL_CL_1ST');
-  sa_src.pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_PRODUCTS', user_name => 'BL_CL_1ST');
-END;
-/
+GRANT READ, WRITE ON DIRECTORY external_geo_tables TO bl_cl_1st;
+GRANT READ, WRITE ON DIRECTORY external_cust_tables TO bl_cl_1st;
+GRANT READ, WRITE ON DIRECTORY external_emp_tables TO bl_cl_1st;
+GRANT READ, WRITE ON DIRECTORY external_ext_tables TO bl_cl_1st;
+GRANT READ, WRITE ON DIRECTORY external_prod_tables TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_countries TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_structures TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_full_data TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_bra_sizes TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_panty_sizes TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_customers TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_employees TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_stores TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_payment_methods TO bl_cl_1st;
+GRANT SELECT ON sa_src.ext_products TO bl_cl_1st;

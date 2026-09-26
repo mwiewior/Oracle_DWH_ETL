@@ -9,7 +9,7 @@
         (TYPE oracle_loader
          DEFAULT DIRECTORY external_geo_tables
          ACCESS PARAMETERS
-            (records delimited BY 0x'0D0A'
+            (records delimited BY newline
              nobadfile nodiscardfile nologfile fields terminated BY ';'
              missing field VALUES are NULL 
                 (country_id INTEGER EXTERNAL (4),
