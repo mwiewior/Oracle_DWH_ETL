@@ -5,6 +5,7 @@ AS
   PROCEDURE merge_table_ce_stores;
   
 END pkg_etl_insert_stores;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_stores
 AS
@@ -31,7 +32,7 @@ BEGIN
          phone,
          address,
          wct.city_id,
-         insert_dt,
+         wst.start_dt AS insert_dt,
          SYSDATE AS update_dt
   FROM   wrk_stores wst left join wrk_cities wct on wst.city = wct.city_desc
   WHERE  wct.city_id IS NOT NULL;
@@ -116,3 +117,4 @@ WHEN OTHERS THEN
 END merge_table_ce_stores;
 ---------------------------------------------------
 END pkg_etl_insert_stores;
+/

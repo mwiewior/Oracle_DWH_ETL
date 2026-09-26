@@ -5,6 +5,7 @@ AS
   PROCEDURE merge_table_dim_stores;
   
 END pkg_etl_insert_stores;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_stores
 AS
@@ -133,3 +134,4 @@ WHEN OTHERS THEN
 END merge_table_dim_stores;
 ---------------------------------------------------
 END pkg_etl_insert_stores;
+/

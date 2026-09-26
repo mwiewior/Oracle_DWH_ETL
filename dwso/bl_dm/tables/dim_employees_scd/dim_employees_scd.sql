@@ -1,6 +1,3 @@
-BEGIN
-  pkg_drop.drop_proc(object_name => 'dim_employees_scd', object_type => 'table');
-END;
 
 CREATE TABLE dim_employees_scd
   (

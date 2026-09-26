@@ -1,7 +1,3 @@
--- CLS_PRODUCT_TYPES.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'cls_product_types', object_type => 'table');
-END;
 
 CREATE TABLE cls_product_types
   (

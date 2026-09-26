@@ -34,6 +34,7 @@ BEGIN
   pkg_grants.USER_GRANT(GRANT_NAME => 'UNLIMITED TABLESPACE', USER_NAME => 'BL_CL_2ND');
   pkg_grants.USER_GRANT(GRANT_NAME => 'UNLIMITED TABLESPACE', USER_NAME => 'BL_DM');
 END;
+/
 ---------------------------------------------------------------------
 SA_SRC
 =====================================================================
@@ -307,6 +308,7 @@ BEGIN
   pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_PAYMENT_METHODS', user_name => 'BL_CL_1ST');
   pkg_grants.user_grant(grant_name => 'SELECT', schema_name => 'SA_SRC', object_name => 'EXT_PRODUCTS', user_name => 'BL_CL_1ST');
 END;
+/
 ---------------------------------------------------------------------
 COMMIT;
 ---------------------------------------------------------------------
@@ -336,6 +338,7 @@ BEGIN
   pkg_etl_insert_wrk.insert_table(table_name_to => 'WRK_COUNTRIES', table_name_from => 'SA_SRC.EXT_COUNTRIES');
   pkg_etl_insert_wrk.insert_table(table_name_to => 'WRK_BRA_SIZES', table_name_from => 'SA_SRC.EXT_BRA_SIZES');  
 END;
+/
 ---------------------------------------------------------------------
 TRUNCATE table wrk_cities;
 
@@ -372,6 +375,7 @@ BEGIN
   pkg_etl_insert_products.insert_table_products;
   pkg_etl_insert_products.insert_table_product_details;
 END;
+/
 ---------------------------------------------------------------------
 BL_3NF
 =====================================================================
@@ -452,6 +456,7 @@ BEGIN
   pkg_grants.USER_GRANT(GRANT_NAME => 'SELECT', SCHEMA_NAME => 'BL_3NF', OBJECT_NAME => 'CE_RECEIPTS_SEQ', USER_NAME => 'BL_CL_1ST');
   pkg_grants.USER_GRANT(GRANT_NAME => 'UPDATE', SCHEMA_NAME => 'BL_3NF', OBJECT_NAME => 'CE_RECEIPTS', USER_NAME => 'BL_CL_1ST');
 END;
+/
 ---------------------------------------------------------------------
 BL_CL_1ST
 =====================================================================
@@ -476,6 +481,7 @@ BEGIN
   pkg_etl_insert_products.merge_table_ce_products_first;
   pkg_etl_insert_products.merge_table_ce_product_details;  
 END;
+/
 ---------------------------------------------------------------------
 BL_3NF
 =====================================================================
@@ -499,6 +505,7 @@ BEGIN
   pkg_grants.USER_GRANT(GRANT_NAME => 'SELECT', SCHEMA_NAME => 'BL_3NF', OBJECT_NAME => 'CE_PAYMENT_METHODS', USER_NAME => 'BL_CL_2ND');
   pkg_grants.USER_GRANT(GRANT_NAME => 'SELECT', SCHEMA_NAME => 'BL_3NF', OBJECT_NAME => 'CE_RECEIPTS', USER_NAME => 'BL_CL_2ND');
 END;
+/
 ---------------------------------------------------------------------
 BL_CL_2ND
 =====================================================================
@@ -512,6 +519,7 @@ BEGIN
   pkg_etl_insert_products.insert_table_products;
   pkg_etl_insert_stores.insert_table_stores;  
 END;
+/
 ---------------------------------------------------------------------
 TRUNCATE TABLE cls_time_day;
 
@@ -594,6 +602,7 @@ BEGIN
   pkg_grants.USER_GRANT(GRANT_NAME => 'UPDATE', SCHEMA_NAME => 'BL_DM', OBJECT_NAME => 'FCT_RETAIL_SALES_DD', USER_NAME => 'BL_CL_2ND');
   pkg_grants.USER_GRANT(GRANT_NAME => 'SELECT', SCHEMA_NAME => 'BL_DM', OBJECT_NAME => 'FCT_RETAIL_SALES_DD_SEQ', USER_NAME => 'BL_CL_2ND');
 END;
+/
 ---------------------------------------------------------------------
 BL_CL_2ND
 =====================================================================
@@ -606,6 +615,7 @@ BEGIN
   pkg_etl_insert_products.merge_table_products;
   pkg_etl_insert_stores.merge_table_dim_stores;  
 END;
+/
 ---------------------------------------------------------------------
 INSERT INTO bl_dm.dim_time_day (
     date_dt,
@@ -660,6 +670,7 @@ BEGIN
   pkg_etl_insert_receipts.insert_table_receipts;
   pkg_etl_insert_receipts.merge_table_ce_receipts;
 END;
+/
 ---------------------------------------------------------------------
 BL_CL_2ND
 =====================================================================
@@ -667,4 +678,5 @@ BEGIN
   pkg_etl_insert_retail_sales.insert_table_retail_sales;
   pkg_etl_insert_retail_sales.insert_table_fct_retail_sales;
 END;
+/
 ---------------------------------------------------------------------

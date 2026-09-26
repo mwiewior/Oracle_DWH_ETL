@@ -1,6 +1,3 @@
-BEGIN
-  pkg_drop.drop_proc(object_name => 'ce_stores', object_type => 'table');
-END;
 
 CREATE TABLE ce_stores
   (

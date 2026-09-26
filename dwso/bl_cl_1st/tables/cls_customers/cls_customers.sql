@@ -1,7 +1,3 @@
--- CLS_CUSTOMERS.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'cls_customers', object_type => 'table');
-END;
 
 CREATE TABLE cls_customers
   (

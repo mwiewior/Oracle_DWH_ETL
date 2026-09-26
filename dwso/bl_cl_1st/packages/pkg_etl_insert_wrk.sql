@@ -5,6 +5,7 @@ AS
                           table_name_from IN VARCHAR2);
 						
 END pkg_etl_insert_wrk;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_wrk
 AS
@@ -18,3 +19,4 @@ BEGIN
   COMMIT;
 END insert_table;
 END pkg_etl_insert_wrk;
+/

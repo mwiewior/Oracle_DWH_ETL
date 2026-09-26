@@ -1,7 +1,3 @@
--- WRK_CITIES.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'wrk_cities', object_type => 'table');
-END;
 
 CREATE TABLE wrk_cities
 (

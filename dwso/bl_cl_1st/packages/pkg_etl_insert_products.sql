@@ -14,6 +14,7 @@ AS
   PROCEDURE merge_table_ce_product_details;
   
 END pkg_etl_insert_products;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_products
 AS
@@ -505,3 +506,4 @@ WHEN OTHERS THEN
 END merge_table_ce_product_details;
 ---------------------------------------------------
 END pkg_etl_insert_products;
+/

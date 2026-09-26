@@ -5,6 +5,7 @@ AS
   PROCEDURE merge_table_products;
 						
 END pkg_etl_insert_products;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_products
 AS
@@ -197,3 +198,4 @@ EXCEPTION
 END merge_table_products;
 --------------------------------------------------- 
 END pkg_etl_insert_products;
+/

@@ -18,4 +18,5 @@ BEGIN
   pkg_grants.USER_GRANT(GRANT_NAME => 'SELECT', SCHEMA_NAME => 'BL_3NF', OBJECT_NAME => 'CE_PAYMENT_METHODS', USER_NAME => 'BL_CL_2ND');
   pkg_grants.USER_GRANT(GRANT_NAME => 'SELECT', SCHEMA_NAME => 'BL_3NF', OBJECT_NAME => 'CE_RECEIPTS', USER_NAME => 'BL_CL_2ND');
 END;
+/
 ---------------------------------------------------------------------------------------------------------------------------------------

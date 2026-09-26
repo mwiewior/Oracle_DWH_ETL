@@ -27,4 +27,5 @@ BEGIN
   pkg_grants.USER_GRANT(GRANT_NAME => 'UPDATE', SCHEMA_NAME => 'BL_DM', OBJECT_NAME => 'FCT_RETAIL_SALES_DD', USER_NAME => 'BL_CL_2ND');
   pkg_grants.USER_GRANT(GRANT_NAME => 'SELECT', SCHEMA_NAME => 'BL_DM', OBJECT_NAME => 'FCT_RETAIL_SALES_DD_SEQ', USER_NAME => 'BL_CL_2ND');
 END;
+/
 ---------------------------------------------------------------------------------------------------------------------------------------

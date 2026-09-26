@@ -1,7 +1,3 @@
--- CLS_AGE_CATEGORIES.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'cls_age_categories', object_type => 'table');
-END;
 
 CREATE TABLE cls_age_categories
   (

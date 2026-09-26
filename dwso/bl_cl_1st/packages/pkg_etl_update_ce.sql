@@ -7,6 +7,7 @@ AS
   PROCEDURE update_table_products;
 						
 END pkg_etl_update_tables;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_update_tables
 AS
@@ -125,3 +126,4 @@ EXCEPTION
 END update_table_products;
 --------------------------------------------------- 
 END pkg_etl_update_tables;
+/

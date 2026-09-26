@@ -7,6 +7,7 @@ AS
   PROCEDURE merge_table_ce_panty_size_grid;
 						
 END pkg_etl_insert_sizes;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_sizes
 AS
@@ -176,3 +177,4 @@ END merge_table_ce_panty_size_grid;
 ---------------------------------------------------
 
 END pkg_etl_insert_sizes;
+/

@@ -1,6 +1,3 @@
-BEGIN
-  pkg_drop.drop_proc(object_name => 'cls_fct_retail_sales_dd', object_type => 'table');
-END;
 
 CREATE TABLE cls_fct_retail_sales_dd (
     receipt_id               NUMBER(38) NOT NULL,

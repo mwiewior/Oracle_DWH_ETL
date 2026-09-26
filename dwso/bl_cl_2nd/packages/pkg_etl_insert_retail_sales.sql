@@ -5,6 +5,7 @@ AS
   PROCEDURE insert_table_fct_retail_sales;
   
 END pkg_etl_insert_retail_sales;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_retail_sales
 AS
@@ -132,3 +133,4 @@ WHEN OTHERS THEN
 END insert_table_fct_retail_sales;
 ---------------------------------------------------
 END pkg_etl_insert_retail_sales;
+/

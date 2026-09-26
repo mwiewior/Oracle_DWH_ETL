@@ -1,7 +1,3 @@
--- CLS_LINES.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'cls_lines', object_type => 'table');
-END;
 
 CREATE TABLE cls_lines
   (

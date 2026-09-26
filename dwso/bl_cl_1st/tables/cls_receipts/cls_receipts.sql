@@ -1,7 +1,3 @@
--- CLS_RECEIPTS.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'cls_receipts', object_type => 'table');
-END;
 
 CREATE TABLE cls_receipts
   (

@@ -6,6 +6,7 @@ AS
   PROCEDURE merge_table_ce_pm_second;
 						
 END pkg_etl_insert_payment_methods;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_payment_methods
 AS
@@ -151,3 +152,4 @@ WHEN OTHERS THEN
 END merge_table_ce_pm_second;
 ---------------------------------------------------
 END pkg_etl_insert_payment_methods;
+/

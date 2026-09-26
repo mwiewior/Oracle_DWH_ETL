@@ -10,6 +10,7 @@ AS
                         user_name  IN VARCHAR2,
                         comments   IN boolean := FALSE);
 END pkg_grants;
+/
 
 
 CREATE OR REPLACE PACKAGE BODY pkg_grants AS
@@ -34,3 +35,4 @@ CREATE OR REPLACE PACKAGE BODY pkg_grants AS
         EXECUTE IMMEDIATE ('GRANT ' || grant_name || ' TO ' || user_name);
   END;
 END pkg_grants;
+/

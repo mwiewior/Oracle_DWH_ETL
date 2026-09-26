@@ -1,6 +1,3 @@
-BEGIN
-  pkg_drop.drop_proc(object_name => 'ce_bra_size_grid', object_type => 'table');
-END;
 
 CREATE TABLE ce_bra_size_grid
   (

@@ -1,7 +1,3 @@
--- WRK_FULL_DATA.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'wrk_full_data', object_type => 'table');
-END;
 
 CREATE TABLE wrk_full_data
 (

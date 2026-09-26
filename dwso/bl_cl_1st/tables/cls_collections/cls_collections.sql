@@ -1,7 +1,3 @@
--- CLS_COLLECTIONS.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'cls_collections', object_type => 'table');
-END;
 
 CREATE TABLE cls_collections
   (

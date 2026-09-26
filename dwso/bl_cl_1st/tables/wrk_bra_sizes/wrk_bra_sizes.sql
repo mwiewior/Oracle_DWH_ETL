@@ -1,7 +1,3 @@
--- WRK_BRA_SIZES.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'wrk_bra_sizes', object_type => 'table');
-END;
 
 CREATE TABLE wrk_bra_sizes
 ( 

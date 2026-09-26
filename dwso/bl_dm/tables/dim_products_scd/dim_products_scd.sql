@@ -1,6 +1,3 @@
-BEGIN
-  pkg_drop.drop_proc(object_name => 'dim_products_scd', object_type => 'table');
-END;
 
 CREATE TABLE dim_products_scd (
     product_surr_id     NUMBER(38) NOT NULL,

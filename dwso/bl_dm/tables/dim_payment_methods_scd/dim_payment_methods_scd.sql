@@ -1,6 +1,3 @@
-BEGIN
-  pkg_drop.drop_proc(object_name => 'dim_payment_methods_scd', object_type => 'table');
-END;
 
 CREATE TABLE dim_payment_methods_scd
   (

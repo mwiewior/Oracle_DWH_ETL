@@ -5,6 +5,7 @@ AS
   PROCEDURE merge_table_payment_methods;
 					
 END pkg_etl_insert_payment_methods;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_payment_methods
 AS
@@ -88,3 +89,4 @@ WHEN OTHERS THEN
 END merge_table_payment_methods;
 ---------------------------------------------------
 END pkg_etl_insert_payment_methods;
+/

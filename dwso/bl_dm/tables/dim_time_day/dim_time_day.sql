@@ -1,6 +1,3 @@
-BEGIN
-  pkg_drop.drop_proc(object_name => 'dim_time_day', object_type => 'table');
-END;
 
 CREATE TABLE dim_time_day (
     date_dt                  DATE NOT NULL,

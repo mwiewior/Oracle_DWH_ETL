@@ -1,7 +1,3 @@
--- CE_CONTINENTS.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'ce_continents', object_type => 'table');
-END;  
 
 CREATE TABLE ce_continents
   (

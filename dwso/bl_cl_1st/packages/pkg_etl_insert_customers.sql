@@ -6,6 +6,7 @@ AS
   PROCEDURE merge_table_customers_second;
 						
 END pkg_etl_insert_customers;
+/
 
 CREATE OR REPLACE PACKAGE BODY pkg_etl_insert_customers
 AS
@@ -226,3 +227,4 @@ WHEN OTHERS THEN
 END merge_table_customers_second;
 ---------------------------------------------------
 END pkg_etl_insert_customers;
+/

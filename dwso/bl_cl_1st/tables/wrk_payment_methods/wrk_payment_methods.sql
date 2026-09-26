@@ -1,7 +1,3 @@
--- WRK_PAYMENT_METHODS.
-BEGIN
-  pkg_drop.drop_proc(object_name => 'wrk_payment_methods', object_type => 'table');
-END;
 
 CREATE TABLE wrk_payment_methods
   (
